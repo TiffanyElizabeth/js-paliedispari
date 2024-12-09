@@ -15,12 +15,23 @@ const userWord = prompt("Inserisca una parola");
  */
 function isPalindrome(word) {
     let wordBackwards="";
-    for(let i=userWord.length - 1; i >= 0; i--) {
-        wordBackwards = wordBackwards + userWord[i];
+    for(let i=word.length - 1; i >= 0; i--) {
+        wordBackwards = wordBackwards + word[i];
     }
-    if(userWord === wordBackwards) {
-        alert("La parola è palindroma")
+
+    if(word === wordBackwards) {
+        return true;
     } else {
-        alert("La parola non è palindroma")
+        return false;
     }
+}
+
+// 3. applica la funzione 
+const checkIsPalindrome = isPalindrome(userWord);
+
+// 4. informa l'utente se la parola è palindroma o no
+if(checkIsPalindrome) {
+    alert("La parola è palindroma")
+} else {
+    alert("La parola non è palindroma")
 }
